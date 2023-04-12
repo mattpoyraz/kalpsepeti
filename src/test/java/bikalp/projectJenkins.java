@@ -18,7 +18,7 @@ public class projectJenkins extends baseTest1 {
     @Test
     public void submitOrder () throws InterruptedException, IOException {
 
-        productCatalogue plist= lpage.loginCredan("anshika@gmail.com","Iamking@000");
+        productCatalogue plist= lpage.loginCredan("ismetp.27@gmail.com","1453IstanbulDallas");
 
         List<WebElement> allItems= plist.getProductList();
         plist.addProductToCart(productName);

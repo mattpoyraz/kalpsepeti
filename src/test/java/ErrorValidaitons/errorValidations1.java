@@ -17,7 +17,7 @@ public class errorValidations1 extends baseTest1 {
     public void loginValidation() throws InterruptedException, IOException {
 
 
-        productCatalogue plist = lpage.loginCredan("anshika@gmail.com","Iaamking@000");
+        productCatalogue plist = lpage.loginCredan("ismetp.27@gmail.com","1453IstanbulDallass");
         Assert.assertEquals("Incorrect email or password.", lpage.setGetErrorMessage());
 
 
