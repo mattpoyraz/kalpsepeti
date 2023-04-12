@@ -26,7 +26,7 @@ public class errorValidations1 extends baseTest1 {
     @Test
     public void productErrorValidation() throws InterruptedException, IOException {
 
-        productCatalogue plist = lpage.loginCredan("anshika@gmail.com","Iamking@000");
+        productCatalogue plist = lpage.loginCredan("ismetp.27@gmail.com","1453IstanbulDallas");
         Thread.sleep(3000);
         List<WebElement> allItems = plist.getProductList();
         plist.addProductToCart(productName);
