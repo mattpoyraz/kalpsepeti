@@ -37,10 +37,8 @@ public class pro {
         if (browserName.contains("Chrome")) {
 
             ChromeOptions options =new ChromeOptions();
-            //WebDriverManager.chromedriver().setup();
-            System.setProperty("webdriver.chrome.driver",
-                    "C://Users//ismet//Desktop//PC-TESTING//chromedriver_win32//chromedriver.exe");
-
+            WebDriverManager.chromedriver().setup();
+            //System.setProperty("webdriver.chrome.driver","C://Users//ismet//IdeaProjects//IsmetLast10//drivers//chromedriver.exe");
 
             if(browserName.contains("Headless")){
                 options.addArguments("Headless");
@@ -57,7 +55,7 @@ public class pro {
         } else if (browserName.equalsIgnoreCase("Edge")) {
             //WebDriverManager.edgedriver().setup();
             System.setProperty("webdriver.edge.driver",
-                    "C://Users//ismet//Desktop//PC-TESTING//msedgedriver.exe");
+                    "C://Users//ismet//IdeaProjects//IsmetLast10//drivers//msedgedriver.exe");
             driver = new EdgeDriver();
 
 
