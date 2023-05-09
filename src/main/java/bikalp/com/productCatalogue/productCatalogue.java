@@ -34,8 +34,8 @@ public class productCatalogue extends abscratchComponents {
     By addToCart= By.cssSelector(".card-body button:last-of-type");
     By toastCont= By.cssSelector("#toast-container");
 
-    public List<WebElement> getProductList(){
 
+    public List<WebElement> getProductList(){
         waitForElementAppear(productsBy);
         return allItems;
     }
@@ -51,7 +51,7 @@ public class productCatalogue extends abscratchComponents {
         WebElement products = getProductByName(productName);
         products.findElement(addToCart).click();
         waitForElementAppear(toastCont);
-        waitForElemenetDesAppear(spinner);
+        //waitForElemenetDesAppear(spinner);
     }
 
 

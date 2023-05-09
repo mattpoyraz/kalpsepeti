@@ -19,14 +19,11 @@ public class errorValidations1 extends pro {
 
     @Test(groups = {"ErrorHandling"},retryAnalyzer = Retry.class)
     public void loginValidation() throws InterruptedException, IOException {
-
-
         page.loginCredan(emailId,passwordId);
-        Assert.assertEquals("Incorrect email or password.", page.setGetErrorMessage());
-
-
+        String expected=page.setGetErrorMessage();
+        String actual="Incorrect email or password.";
+        Assert.assertEquals(actual,expected);
     }
-
 
 
 
@@ -35,13 +32,17 @@ public class errorValidations1 extends pro {
 
         productCatalogue plist = page.loginCredan(emailId,passwordId);
         Thread.sleep(3000);
+
         List<WebElement> allItems = plist.getProductList();
         plist.addProductToCart(productName);
+
         cartPage cpage = plist.gotoCartPage();
         Boolean match = cpage.VerifyProductDisplay(productName);
         Assert.assertTrue(match);
 
     }
+
+
 
 
 

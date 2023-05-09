@@ -15,7 +15,6 @@ public class landingPage extends abscratchComponents {
          super(driver);
          this.driver=driver;
          PageFactory.initElements(driver,this);
-
      }
 
      @FindBy(id="userEmail")
@@ -37,6 +36,7 @@ public class landingPage extends abscratchComponents {
         getUserEmail.sendKeys(email);
         getUserName.sendKeys(password);
         getSubmit.click();
+
         productCatalogue plist=new productCatalogue(driver);
         return plist;
     }

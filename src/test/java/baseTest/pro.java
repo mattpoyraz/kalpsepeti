@@ -18,6 +18,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
 public class pro {
 
@@ -60,11 +61,12 @@ public class pro {
 
 
         }
-
-
-
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         return driver;
     }
+
+
 
     public String getScreenShot(String testCaseName,WebDriver driver) throws IOException {
         TakesScreenshot ts= (TakesScreenshot) driver;
@@ -72,10 +74,7 @@ public class pro {
         File file=new File(System.getProperty("user.dir")+"//reports//"+testCaseName+".png");
         FileUtils.copyFile(source,file);
         return System.getProperty("user.dir") + "//reports//" + testCaseName + ".png";
-
     }
-
-
 
 
     @BeforeMethod(alwaysRun = true)
@@ -85,7 +84,6 @@ public class pro {
         page = new landingPage(driver);
         page.gotoLink();
         return page;
-
     }
 
 

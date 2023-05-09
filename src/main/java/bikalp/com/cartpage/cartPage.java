@@ -26,8 +26,8 @@ public class cartPage extends abscratchComponents {
         PageFactory.initElements(driver,this);
     }
 
-    public  Boolean VerifyProductDisplay(String productName ){
-        boolean match= cartProducts.stream().anyMatch(prd->prd.getText().equalsIgnoreCase(productName));
+    public  Boolean VerifyProductDisplay(String productNamee ){
+        boolean match= cartProducts.stream().anyMatch(prd->prd.getText().equalsIgnoreCase(productNamee));
         return  match;
     }
 
@@ -35,12 +35,5 @@ public class cartPage extends abscratchComponents {
 
         checkoutEle.click();
         return new checkoutPage(driver);
-        /*
-        checkoutPage coutPage=new checkoutPage(driver);
-        return coutPage;
-
-
-         */
-
     }
 }

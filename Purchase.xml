@@ -8,7 +8,7 @@
 </groups>
     <test verbose="2" preserve-order="true" name="Error Validation">
         <classes>
-            <class name="bikalp.project1"/>
+            <class name="bikalp.project"/>
         </classes>
     </test>
 </suite>
