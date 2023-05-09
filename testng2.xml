@@ -11,10 +11,4 @@
         </classes>
     </test>
 
-    <test thread-count="5"  name="Error Validation">
-        <classes>
-            <class name="bikalp.project1"/>
-        </classes>
-    </test>
-
 </suite>

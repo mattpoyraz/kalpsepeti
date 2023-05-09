@@ -7,14 +7,15 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+
 public class landingPage extends abscratchComponents {
 
      WebDriver driver;
      public landingPage (WebDriver driver){
          super(driver);
-
          this.driver=driver;
          PageFactory.initElements(driver,this);
+
      }
 
      @FindBy(id="userEmail")
@@ -28,6 +29,8 @@ public class landingPage extends abscratchComponents {
 
      @FindBy(css="[class*='toast-container']")
      WebElement getErrorMessage;
+
+
 
     public productCatalogue loginCredan (String email, String password){
 

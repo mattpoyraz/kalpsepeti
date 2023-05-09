@@ -1,6 +1,7 @@
 package ErrorValidaitons;
 
-import baseTest.baseTest1;
+import baseTest.Retry;
+import baseTest.pro;
 import bikalp.com.cartpage.cartPage;
 import bikalp.com.productCatalogue.productCatalogue;
 import org.openqa.selenium.WebElement;
@@ -10,23 +11,29 @@ import org.testng.annotations.Test;
 import java.io.IOException;
 import java.util.List;
 
-public class errorValidations1 extends baseTest1 {
+public class errorValidations1 extends pro {
     String productName = "ZARA COAT 3";
+    String emailId="ismetp.27@gmail.com";
+    String passwordId="1453IstanbulDallass";
 
-    @Test
+
+    @Test(groups = {"ErrorHandling"},retryAnalyzer = Retry.class)
     public void loginValidation() throws InterruptedException, IOException {
 
 
-        productCatalogue plist = lpage.loginCredan("ismetp.27@gmail.com","1453IstanbulDallass");
-        Assert.assertEquals("Incorrect email or password.", lpage.setGetErrorMessage());
+        page.loginCredan(emailId,passwordId);
+        Assert.assertEquals("Incorrect email or password.", page.setGetErrorMessage());
 
 
     }
 
+
+
+
     @Test
     public void productErrorValidation() throws InterruptedException, IOException {
 
-        productCatalogue plist = lpage.loginCredan("ismetp.27@gmail.com","1453IstanbulDallas");
+        productCatalogue plist = page.loginCredan(emailId,passwordId);
         Thread.sleep(3000);
         List<WebElement> allItems = plist.getProductList();
         plist.addProductToCart(productName);
@@ -35,4 +42,10 @@ public class errorValidations1 extends baseTest1 {
         Assert.assertTrue(match);
 
     }
+
+
+
+
+
+
 }
