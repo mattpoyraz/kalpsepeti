@@ -32,8 +32,8 @@ public class pro {
                 + "//src//main//java//bikalp//com//resources//globalData.properties");
         properties.load(fis);
 
-        String browserName = System.getProperty("browser")!=null ?
-                System.getProperty("browser"):properties.getProperty("browser");
+        String browserName = System.getProperty("Browser")!=null ?
+                System.getProperty("Browser"):properties.getProperty("Browser");
 
         if (browserName.contains("Chrome")) {
 
