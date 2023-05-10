@@ -34,7 +34,8 @@ public class stepDefination extends pro {
         plist.addProductToCart(productName);
     }
     @When("^Checkot (.+) and submit the order$")
-    public void checkout_submit_order(String productName){
+    public void checkout_submit_order(String productName) throws InterruptedException {
+        Thread.sleep(3000);
         cartPage cpage = plist.gotoCartPage();
         Boolean match = cpage.VerifyProductDisplay(productName);
         Assert.assertTrue(match);
@@ -43,13 +44,22 @@ public class stepDefination extends pro {
         cofirmCh = chekcoutPage.submitOrder();
     }
 
-    @Then("{string} message is displayed on ConfirmationPage")
-    public void message_displayed_on_confirmationPage(String string)
-    {
-        String confirMessage = cofirmCh.getConfirmationMessage();
-        Assert.assertTrue(confirMessage.equalsIgnoreCase(string));
-    }
+    @Then("^\"([^\"]*)\" message is displayed on ConfirmationPage")
+    public void message_displayed_on_confirmationPage(String string) throws InterruptedException {
 
+        String confirMessage = cofirmCh.getConfirmationMessage();
+        Thread.sleep(3000);
+        Assert.assertTrue(confirMessage.equalsIgnoreCase(string));
+        driver.close();
+
+    }
+    @Then("^\"([^\"]*)\" message is displayed$")
+    public void something_message_is_displayed(String strArg1) throws Throwable {
+        String expected=page.setGetErrorMessage();
+        //String actual="Incorrect email or password.";
+        Assert.assertEquals(strArg1,expected);
+        driver.close();
+    }
 
 }
 
