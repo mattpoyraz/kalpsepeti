@@ -43,9 +43,8 @@ public class stepDefination extends pro {
         chekcoutPage.setSelectCountry("India");
         cofirmCh = chekcoutPage.submitOrder();
     }
-
-    @Then("^\"([^\"]*)\" message is displayed on ConfirmationPage")
-    public void message_displayed_on_confirmationPage(String string) throws InterruptedException {
+    @Then("{string} message is displayed on Confirmation")
+    public void message_is_displayed_on_confirmation(String string) throws InterruptedException {
 
         String confirMessage = cofirmCh.getConfirmationMessage();
         Thread.sleep(3000);
@@ -53,13 +52,16 @@ public class stepDefination extends pro {
         driver.close();
 
     }
-    @Then("^\"([^\"]*)\" message is displayed$")
+    @Then("{string} message is displayed$")
     public void something_message_is_displayed(String strArg1) throws Throwable {
         String expected=page.setGetErrorMessage();
-        //String actual="Incorrect email or password.";
+        String actual="Incorrect email or password.";
         Assert.assertEquals(strArg1,expected);
         driver.close();
     }
+
+
+
 
 }
 
