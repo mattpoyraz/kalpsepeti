@@ -13,5 +13,5 @@
       Then "THANKYOU FOR THE ORDER." message is displayed on Confirmation
 
       Examples:
-        | name                | password           | productName |
-        | ismetp.27@gmail.com | 1453IstanbulDallas | ZARA COAT 3 |
+        | name                | password     | productName |
+        | ismetp.27@gmail.com | 1453Istanbul | ZARA COAT 3 |
